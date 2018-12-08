@@ -7,19 +7,31 @@ export default class PieChart extends Component {
 		this.props.data.forEach(bill => {
 			temp_data.unshift(bill.savings);
 		});
-		console.log(temp_data)
+		console.log(temp_data);
 		return temp_data;
 	}
 
 	render() {
 		console.log(this.props.data);
 		const data = {
-			labels: ["December", "January", "February","March", "April"],
+			labels: ["December", "January", "February", "March", "April"],
 			datasets: [
 				{
 					data: this.savings(),
-					backgroundColor: ["#BAEAF7", "#102542", "#B80C09", "#36A2EB", "#01BAEF"],
-					hoverBackgroundColor: ["#BAEAF7", "#102542", "#B80C09", "#36A2EB", "#01BAEF"]
+					backgroundColor: [
+						"#BAEAF7",
+						"#102542",
+						"#B80C09",
+						"#36A2EB",
+						"#01BAEF"
+					],
+					hoverBackgroundColor: [
+						"#BAEAF7",
+						"#102542",
+						"#B80C09",
+						"#36A2EB",
+						"#01BAEF"
+					]
 				}
 			]
 		};

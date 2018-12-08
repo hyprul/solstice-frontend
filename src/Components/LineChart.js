@@ -2,14 +2,12 @@ import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 
 export default class LineChart extends Component {
-
-
-	savings() {
+	bill() {
 		const temp_data = [];
 		this.props.data.forEach(bill => {
 			temp_data.unshift(bill.bill);
 		});
-		return temp_data
+		return temp_data;
 	}
 
 	render() {
@@ -35,12 +33,11 @@ export default class LineChart extends Component {
 					pointHoverBorderWidth: 2,
 					pointRadius: 1,
 					pointHitRadius: 10,
-					data: this.savings()
+					data: this.bill()
 				}
 			]
 		};
 		console.log(this.props.data);
-
 
 		return (
 			<div>
