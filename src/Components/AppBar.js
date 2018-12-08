@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const styles = {
   root: {
@@ -28,34 +28,29 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-        <NavLink
-      to="/"
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <Button
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Menu"
+            >
+              <Typography variant="h6" color="inherit" className={classes.grow}>
+                Home
+              </Typography>
+            </Button>
+          </Link>
 
-    >
-          <Button
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
-            <Typography variant="h6" color="inherit" className={classes.grow}>
-              Home
-            </Typography>
-          </Button>
-          </NavLink>
-           <NavLink
-      to="/bill"
-    
-    >
-          <Button
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
-            <Typography variant="h6" color="inherit" className={classes.grow}>
-              Data
-            </Typography>
-          </Button>
-          </NavLink>
+          <Link to="/bill" style={{ textDecoration: "none", color: "white" }}>
+            <Button
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Menu"
+            >
+              <Typography variant="h6" color="inherit" className={classes.grow}>
+                Data
+              </Typography>
+            </Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

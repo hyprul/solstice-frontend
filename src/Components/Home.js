@@ -14,8 +14,6 @@ var backgroundStyle = {
 
 export default class Home extends Component {
 
-
-
 	
 
 	render() {
@@ -23,7 +21,7 @@ export default class Home extends Component {
 			<div style={backgroundStyle}>
 				
 				
-				
+
 			</div>
 		);
 	}
