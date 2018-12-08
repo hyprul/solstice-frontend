@@ -6,10 +6,20 @@ import Billing from "./Components/Billing";
 import { BrowserRouter, Route } from "react-router-dom";
 import AppBar from './Components/AppBar'
 
+import Background from "./backgroundImages/solstice.jpg";
+
+var backgroundStyle = {
+  width: "100%",
+  height: "100vh",
+  backgroundSize: "cover",
+
+  backgroundImage: `url(${Background})`
+};
+
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={backgroundStyle}>
         <BrowserRouter>
           <React.Fragment>
             <AppBar/>

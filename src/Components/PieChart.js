@@ -1,26 +1,35 @@
 import React, { Component } from "react";
 import { Pie } from "react-chartjs-2";
 
-const data = {
-	labels: ["Red", "Green", "Yellow"],
-	datasets: [
-		{
-			data: [300, 50, 100],
-			backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-			hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
-		}
-	]
-};
-
 export default class PieChart extends Component {
+	savings() {
+		const temp_data = [];
+		this.props.data.forEach(bill => {
+			temp_data.unshift(bill.savings);
+		});
+		console.log(temp_data)
+		return temp_data;
+	}
+
 	render() {
+		console.log(this.props.data);
+		const data = {
+			labels: ["December", "January", "February","March", "April"],
+			datasets: [
+				{
+					data: this.savings(),
+					backgroundColor: ["#BAEAF7", "#102542", "#B80C09", "#36A2EB", "#01BAEF"],
+					hoverBackgroundColor: ["#BAEAF7", "#102542", "#B80C09", "#36A2EB", "#01BAEF"]
+				}
+			]
+		};
 		return (
 			<div>
-				<h2>Pie Distribution</h2>
+				<h2>Savings</h2>
 				<Pie
 					data={data}
-					width={100}
-					height={50}
+					width={200}
+					height={200}
 					options={{
 						maintainAspectRatio: false
 					}}

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
 import CircularIndeterminate from "./ProgressBar";
+import './Billing.css';
+
 
 export default class Billing extends Component {
 	constructor(props) {
@@ -17,22 +19,23 @@ export default class Billing extends Component {
 			.then(response => response.json())
 			.then(data => this.setState({ data }));
 	}
+
 	render() {
 		const { data } = this.state;
 		if (!data) {
 			return (
-				<div>
-					<h1>Billing Page</h1>
+				<div className="container">
+					<h1 style={{color:'pink'}}>Billing Page</h1>
 
 					<CircularIndeterminate />
 				</div>
 			);
 		} else {
 			return (
-				<div>
+				<div className="container">
 					<h1>Billing Page</h1>
-					<LineChart />
-					<PieChart />
+					<LineChart data={this.state.data}/>
+					<PieChart data={this.state.data}/>
 				</div>
 			);
 		}
