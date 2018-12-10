@@ -13,7 +13,7 @@ export default class Billing extends Component {
 	}
 
 	componentDidMount() {
-		fetch("http://localhost:3000/data")
+		fetch("https://solstice-backend.herokuapp.com/data")
 			.then(response => response.json())
 			.then(data => this.setState({ data }));
 	}
